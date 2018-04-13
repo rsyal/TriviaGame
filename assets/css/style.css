@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+ }
+ 
+ p {
+    margin-top: 10px;
+ }
+ .title {
+    color: black;
+    display: block;
+    margin: 0 auto;
+ }
+ .bg {
+    background-image:  url('../images/flowers.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+ 
+ .startButton{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    
+ 
+ }
+ .options{
+    /* border: solid 1px black; */
+    /* border-radius: 25px; */
+    text-align: center;
+    font-size: 25px;
+    color: hotpink;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+ }
+ 
+ #question {
+    /* border: solid 3px black;
+    border-radius: 25px; */
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+  
+ }
+ 
+ #timeRemaining {
+    /* border: solid 3px black;
+    border-radius: 10px; */
+    text-align: center;
+    font-size: 25px;
+    display: block;
+    margin: 0 auto;
+ 
+  
+ }
+
+ .gameOver{
+    /* border: solid 1px black; */
+    /* border-radius: 25px; */
+    text-align: center;
+    font-size: 25px;
+    color: hotpink;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+ }
+
+
+
+
+
+
+
+
+
+
+
