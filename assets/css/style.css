@@ -4,14 +4,15 @@ body, html {
  
  p {
     margin-top: 10px;
+    color: #f8268f;
  }
  .title {
-    color: black;
+    color: #f8268f;
     display: block;
     margin: 0 auto;
  }
  .bg {
-    background-image:  url('../images/flowers.jpg');
+    background-image:  url('../images/flowers.jpeg');
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;

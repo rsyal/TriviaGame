@@ -2,7 +2,6 @@
 
 var correct = 0;
 var incorrect = 0;
-var unanswered = 0;
 var time = 20;
 var currentQuestion = 0;
 var coinFlip;
@@ -11,35 +10,35 @@ var nextQuestion;
 var questionArray = [
 	{
 		question: "What is the leading cause of death in women?",
-		option: ["Heart Disease","Breast cancer","Accidents","Lung cancer"],
+		option: ["Heart Disease","Breast cancer","Accidents","Lung cancer","Foot Fungus"],
 		answer: "Heart Disease"	
 	
 
 },
 	{
 		question: "Which factor does NOT increase your risk of breast cancer?",
-		option: ["Never having children","Breast Injury","Obesity","Family History"],
+		option: ["Breast Feeding","Breast Injury","BRCA1 Carrier","Obesity","Family History"],
 		answer: "Breast Injury"
 	
 },
 
 {
 	question: "Which of the following has shown to lower your risk of ovarian cancer??",
-	option: ["Birth Control Pills","Using pads instead of tampons","Omega-3-fatty acids","IUD"],
+	option: ["Birth Control Pills","Late menopause","Using tampons","Taking vitamins","IUD"],
 	answer: "Birth Control Pills"
 
 },
 
 {
 	question: "Which of these is NOT the name of one of the phases of your menstrual cycle??",
-	option: ["Ovulation","Luteal","Follicular","Corpus"],
+	option: ["Ovulation","Luteal","Follicular","Menstrual","Corpus"],
 	answer: "Corpus"
 
 },
 
 {
 	question: "What is the average age of menopause?",
-	option: ["55","60","51","45"],
+	option: ["55","40","60","51","65"],
 	answer: "51"
 
 },
@@ -48,7 +47,7 @@ var questionArray = [
 
 	{
 		question: "Which is the most common STD?",
-		option: ["Chlamydia","Herpes","HIV","Syphilis"],
+		option: ["Chlamydia","Herpes","HIV","Hepatis C","Syphilis"],
 		answer: "Chlamydia"
 }];
 
@@ -61,7 +60,7 @@ function startGame() {
 		console.log("You clicked it");	
 });
 	$(".startButton").on("click", function () {
-		displayQuestion(currentQuestion);
+		questions(currentQuestion);
 		
 		
 		console.log("am I working");
@@ -78,7 +77,7 @@ function startGame() {
 		$("#timeRemaining").html(time);
 	});
 }		
-function displayQuestion(currentQuestion){
+function questions(currentQuestion){
 	$("#question").show(8000);
 // // Show question (Loop questions through array, start at 0 position)
 	$("#question").text(questionArray[currentQuestion].question);
@@ -96,43 +95,36 @@ function displayQuestion(currentQuestion){
 	$(".options").on("click", function () {
 		if($(this).data('value')===questionArray[currentQuestion].answer) {
 			correct++;
-			displayCorrect();
+			correctAnswer();
 		} else {
 			incorrect++;
-			displayWrong();
+			wrongAnswer();
 
 		}
 	});
 	
-	function displayCorrect(){
+	function correctAnswer(){
 		$("#question").html("You are correct");
 		clearInterval(coinFlip);
 		$(".timeRemaining").hide();
-		nextQuestion = setTimeout(loadQuestion, 700);
+		nextQuestion = setTimeout(moveOn, 700);
 	
 	}
-	function displayWrong(){
+	function wrongAnswer(){
 		$("#question").html("You are wrong." + "<br>" + 
 		"The answer is " + 
 		questionArray[currentQuestion].answer);
 		clearInterval(coinFlip);
 		$(".timeRemaining").hide();
-		nextQuestion = setTimeout(loadQuestion, 700);
+		nextQuestion = setTimeout(moveOn, 700);
 	}
-	function unanswered(){
-		clearInterval(coinFlip);
-		$("#question").html("You did not answer." + "<br>" + 
-		"The answer is " + 
-		questionArray[currentQuestion].answer);
-		nextQuestion = setTimeout(loadQuestion, 700);
 	
-	}
-	function loadQuestion() {
+	function moveOn() {
 		if (currentQuestion === 5) {
 		var newDiv2 = $("<div type = button>");
         newDiv2.attr("text");
         newDiv2.attr("class", "gameOver");
-        newDiv2.html("The quiz is over. Good Job!<hr>Click to start again.");
+        newDiv2.html("The quiz is over. <hr>Good Job!");
 		$("#question").append(newDiv2);
 		$(".options").hide();
 		$("#timeRemaining").hide();
@@ -146,19 +138,13 @@ function displayQuestion(currentQuestion){
 			$("#timeRemaining").show();
 			clearInterval(coinFlip);
 			currentQuestion++;
-			displayQuestion(currentQuestion);
+			questions(currentQuestion);
 		}
 	
 	
 		};
 
-	function score() {
-		$("#question").empty();
-		$(".options").empty();
-		$("#timeRemaning").hide();
-		$("#question").html("Correct Answers" + correct + "Wrong Answers" + wrong + "<br>" );
-	
-	}
+
 }
 
 

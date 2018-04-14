@@ -1,0 +1,49 @@
+Create HTML
+Button for start game
+Link Javascript, CSS, Images to HTML
+
+Javascript
+    Document.ready function
+    Create array of questions
+    Create array of answers
+    Create "correct answer"
+    Global variables
+        corect answers 
+        incorrect answers
+        CoinFlip timer
+        time 
+        
+FUNCTIONS
+
+    START GAME
+        starting game with on-click
+       
+    QUESTIONS   
+        On-click gives first question
+            Function for loading question 0 position, starting 20 second timer
+            for statement
+            Looping through the array of questions
+            Need new Div for answer section
+        On-click of new Div answer section  
+            if/else statement
+
+    CORRECT ANSWER
+                if correct, correct ++
+                    show function correct
+
+    INCORRECT ANSWER
+                else (wrong), incorrect ++
+                    show function incorrect
+
+    MOVE ON
+        Function moveOn
+            continues to load questions until reaches array position 5
+
+I did not complete the score function which shows the score at the end of the quiz.
+I also could not figure out how to restart the game. 
+
+I also used a lot of online help. For example, I copied the new Div section completely!
+
+        
+
+
